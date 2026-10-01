@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Attack Engine | Control Panel</title>
+    <style>
+        body { background-color: #0a0a0a; color: #00ff00; font-family: monospace; text-align: center; }
+        .console { border: 1px solid #00ff00; padding: 20px; margin: 20px; height: 300px; overflow-y: scroll; background: #000; text-align: left; }
+        button { background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>WIFI ATTACK ENGINE v1.0</h1>
+    <div class="console" id="console">
+        [SYSTEM] Waiting for command...<br>
+    </div>
+    <button onclick="runAttack()">START DEAUTH ATTACK</button>
+
+    <script>
+        function runAttack() {
+            const consoleDiv = document.getElementById('console');
+            consoleDiv.innerHTML += "[!] Initializing Attack...<br>";
+            setTimeout(() => {
+                consoleDiv.innerHTML += "[!] Searching for targets...<br>";
+                setTimeout(() => {
+                    consoleDiv.innerHTML += "[SUCCESS] Target Found: SSID 'Home_WiFi'<br>";
+                    consoleDiv.innerHTML += "[!] Sending Deauth Packets...<br>";
+                }, 2000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
